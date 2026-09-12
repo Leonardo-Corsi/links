@@ -3,14 +3,26 @@ url: "https://leonardo-corsi.github.io"
 baseurl: "/links"
 
 sections:
+  - label: "contacts"
+    links:
+      - label: "lcorsi@dongnocchi.it"
+        url: "mailto:lcorsi@dongnocchi.it"
+      - label: "leonardo.corsi@santannapisa.it"
+        url: "mailto:leonardo.corsi@santannapisa.it"
+      - label: "leonardo.corsi.app@gmail.com"
+        url: "mailto:leonardo.corsi.app@gmail.com"
+      
   - label: "profiles"
     links:
+      - label: "LinkedIn"
+        url: "https://www.linkedin.com/in/leonardo-corsi-neuroeng/"
       - label: "Google Scholar"
         url: "https://scholar.google.com/citations?user=BzGZSMcAAAAJ"
       - label: "ORCID"
         url: "https://orcid.org/0000-0003-2937-3858"
       - label: "GitHub"
         url: "https://github.com/Leonardo-Corsi"
+      
 
   - label: "affiliations"
     links:
@@ -21,5 +33,5 @@ sections:
 
   - label: "projects --only_highlighted"
     links:
-      - label: "EEG-MS 2026 GitHub"
+      - label: "EEG-MS 2026 - Microstate-Equivalent Electric Dipoles (GitHub)"
         url: "https://github.com/Leonardo-Corsi/meed"
