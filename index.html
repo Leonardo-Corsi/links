@@ -1,0 +1,188 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#211d19">
+  <title>{{ site.title | escape }}</title>
+  <style>
+    :root {
+      --bg: #211d19;
+      --fg: #f2f2ee;
+      --muted: #a9a39d;
+      --neon: #39ff14;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding:
+        max(24px, env(safe-area-inset-top))
+        max(24px, env(safe-area-inset-right))
+        max(24px, env(safe-area-inset-bottom))
+        max(24px, env(safe-area-inset-left));
+      background: var(--bg);
+      color: var(--fg);
+      font-family: Consolas, "Lucida Console", "Courier New", monospace;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    main {
+      width: min(620px, 100%);
+    }
+
+    .identity {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: clamp(2rem, 5vh, 3rem);
+      font-size: clamp(1.1rem, 3.7vw, 1.38rem);
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    .cursor {
+      flex: 0 0 auto;
+      width: 0.72em;
+      height: 1.08em;
+      display: inline-block;
+      background: var(--neon);
+      box-shadow:
+        0 0 6px rgba(57, 255, 20, 0.85),
+        0 0 14px rgba(57, 255, 20, 0.35);
+      animation: blink 1.05s steps(1, end) infinite;
+    }
+
+    @keyframes blink {
+      0%, 48% { opacity: 1; }
+      49%, 100% { opacity: 0; }
+    }
+
+    .section + .section {
+      margin-top: clamp(1.55rem, 4vh, 2.2rem);
+    }
+
+    .section-label {
+      margin-bottom: 0.45rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.4;
+      user-select: none;
+    }
+
+    .links {
+      display: grid;
+      gap: 0.12rem;
+    }
+
+    .link {
+      display: flex;
+      align-items: baseline;
+      gap: 0.62rem;
+      width: fit-content;
+      max-width: 100%;
+      min-height: 42px;
+      margin-left: -0.55rem;
+      padding: 0.52rem 0.6rem 0.5rem 0.55rem;
+      color: var(--fg);
+      font-size: clamp(0.94rem, 3.4vw, 1rem);
+      line-height: 1.45;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      border-radius: 2px;
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color 90ms linear, color 90ms linear;
+    }
+
+    .prompt {
+      flex: 0 0 auto;
+      color: var(--neon);
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      background: var(--neon);
+      color: var(--bg);
+      outline: none;
+    }
+
+    .link:hover .prompt,
+    .link:focus-visible .prompt {
+      color: var(--bg);
+    }
+
+    @media (max-width: 560px) {
+      body {
+        place-items: start stretch;
+        padding:
+          max(28px, env(safe-area-inset-top))
+          max(20px, env(safe-area-inset-right))
+          max(28px, env(safe-area-inset-bottom))
+          max(20px, env(safe-area-inset-left));
+      }
+
+      main {
+        width: 100%;
+        margin: auto 0;
+      }
+
+      .link {
+        width: calc(100% + 0.55rem);
+      }
+    }
+
+    @media (hover: none) {
+      .link:active {
+        background: var(--neon);
+        color: var(--bg);
+      }
+
+      .link:active .prompt {
+        color: var(--bg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cursor { animation: none; }
+      .link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="identity" aria-label="{{ site.title | escape }}">
+      <span>{{ site.title | escape }}</span>
+      <span class="cursor" aria-hidden="true"></span>
+    </div>
+
+    {% for section in site.sections %}
+      <section class="section">
+        <div class="section-label">$ {{ section.label | escape }}</div>
+        <div class="links">
+          {% for item in section.links %}
+            <a class="link" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">
+              <span class="prompt" aria-hidden="true">&gt;</span>
+              <span>{{ item.label | escape }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </main>
+</body>
+</html>
