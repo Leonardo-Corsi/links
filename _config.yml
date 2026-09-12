@@ -6,22 +6,20 @@ sections:
   - label: "profiles"
     links:
       - label: "Google Scholar"
-        url: "https://scholar.google.com/citations?view_op=search_authors&mauthors=Leonardo+Corsi"
+        url: "https://scholar.google.com/citations?user=BzGZSMcAAAAJ"
       - label: "ORCID"
         url: "https://orcid.org/0000-0003-2937-3858"
       - label: "GitHub"
         url: "https://github.com/Leonardo-Corsi"
-      - label: "arXiv"
-        url: "https://arxiv.org/search/?searchtype=author&query=Corsi%2C+Leonardo"
 
   - label: "affiliations"
     links:
       - label: "Neuro-Robotic Touch Lab @ The BioRobotics Institute"
-        url: "https://bioelectronics.santannapisa.it/"
+        url: "https://www.santannapisa.it/it/istituto/biorobotica/neuro-robotic-touch-laboratory"
       - label: "AIR Lab @ IRCCS Fondazione Don Carlo Gnocchi"
         url: "https://www.dongnocchi.it/ricerca-scientifica/i-centri-irccs/irccs-don-gnocchi-firenze/air-lab"
 
-  - label: "projects"
+  - label: "projects --only_highlighted"
     links:
       - label: "EEG-MS 2026 GitHub"
         url: "https://github.com/Leonardo-Corsi/meed"
