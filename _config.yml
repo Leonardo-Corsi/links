@@ -31,7 +31,3 @@ sections:
       - label: "AIR Lab @ IRCCS Fondazione Don Carlo Gnocchi"
         url: "https://www.dongnocchi.it/ricerca-scientifica/i-centri-irccs/irccs-don-gnocchi-firenze/air-lab"
 
-  - label: "projects --only_highlighted"
-    links:
-      - label: "EEG-MS 2026 - Microstate-Equivalent Electric Dipoles (GitHub)"
-        url: "https://github.com/Leonardo-Corsi/meed"
