@@ -1,0 +1,24 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Bundler / local gems
+.bundle/
+vendor/bundle/
+vendor/cache/
+
+# Local environment
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

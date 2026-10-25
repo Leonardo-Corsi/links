@@ -1,0 +1,16 @@
+{
+  "name": "leonardo-corsi-links",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build-time portrait cropping for the Jekyll CV",
+  "scripts": {
+    "build:cards": "node scripts/build-card-index.cjs",
+    "build:images": "node scripts/crop-portrait.cjs",
+    "dev": "npm run build:cards && npm run build:images && bundle exec jekyll serve --livereload --force_polling",
+    "build": "npm run build:cards && npm run build:images && bundle exec jekyll build"
+  },
+  "devDependencies": {
+    "sharp": "^0.32.6",
+    "smartcrop-sharp": "^2.0.8"
+  }
+}

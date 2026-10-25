@@ -1,0 +1,14 @@
+{
+  "title": "Demographics-robust spontaneous eye blinking slowing in patients with severe acquired brain injury",
+  "date": "2026-08-12",
+  "status": "Article",
+  "description": "Blink-waveform slowing reveals a previously overlooked effect of severe brain injury, even without blink-rate differences, after adjusting for age and sex.",
+  "links": [
+    {
+      "url": "https://doi.org/10.1093/nc/niag043"
+    },
+    {
+      "url": "https://github.com/Leonardo-Corsi/blink-waveforms-sabi"
+    }
+  ]
+}

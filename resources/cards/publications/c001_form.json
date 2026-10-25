@@ -1,0 +1,14 @@
+{
+  "title": "Resting state EEG microstates: is a new FORM all you need?",
+  "date": "2026-09-24",
+  "status": "Preprint",
+  "description": "FORM exposes the limits of template matching by identifying scalp-map conformity as a necessary condition for strong microstate assignment.",
+  "links": [
+    {
+      "url": "https://doi.org/10.64898/2026.09.24.754021"
+    },
+    {
+      "url": "https://github.com/Leonardo-Corsi/microstates-form"
+    }
+  ]
+}

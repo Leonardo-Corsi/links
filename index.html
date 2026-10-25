@@ -8,6 +8,7 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#211d19">
   <title>{{ site.title | escape }}</title>
+  <link rel="stylesheet" href="assets/site-nav.css">
   <style>
     :root {
       --bg: #211d19;
@@ -28,13 +29,10 @@
       min-height: 100vh;
       min-height: 100svh;
       min-height: 100dvh;
-      display: grid;
-      place-items: center;
-      padding:
-        max(24px, env(safe-area-inset-top))
-        max(24px, env(safe-area-inset-right))
-        max(24px, env(safe-area-inset-bottom))
-        max(24px, env(safe-area-inset-left));
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
       background: var(--bg);
       color: var(--fg);
       font-family: Consolas, "Lucida Console", "Courier New", monospace;
@@ -43,7 +41,9 @@
     }
 
     main {
-      width: min(620px, 100%);
+      width: min(620px, calc(100% - 48px));
+      margin: auto;
+      padding: 48px 0 72px;
     }
 
     .identity {
@@ -127,18 +127,10 @@
     }
 
     @media (max-width: 560px) {
-      body {
-        place-items: start stretch;
-        padding:
-          max(28px, env(safe-area-inset-top))
-          max(20px, env(safe-area-inset-right))
-          max(28px, env(safe-area-inset-bottom))
-          max(20px, env(safe-area-inset-left));
-      }
-
       main {
-        width: 100%;
-        margin: auto 0;
+        width: calc(100% - 40px);
+        margin: auto;
+        padding: 42px 0 70px;
       }
 
       .link {
@@ -164,6 +156,12 @@
   </style>
 </head>
 <body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="./">LEONARDO CORSI <span class="brand-cursor" aria-hidden="true"></span></a>
+    <nav aria-label="Site navigation"><a href="./" aria-current="page">CONTACTS</a><a href="cv/">CV</a><a href="research/">RESEARCH</a></nav>
+  </div>
+</header>
   <main>
     <div class="identity" aria-label="{{ site.title | escape }}">
       <span>{{ site.title | escape }}</span>

@@ -7,5 +7,3 @@ https://leonardo-corsi.github.io/links/
 
 Repo:
 https://github.com/Leonardo-Corsi/links
-
-`_config.yml` >> links and labels

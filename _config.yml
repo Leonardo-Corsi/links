@@ -31,3 +31,15 @@ sections:
       - label: "AIR Lab @ IRCCS Fondazione Don Carlo Gnocchi"
         url: "https://www.dongnocchi.it/ricerca-scientifica/i-centri-irccs/irccs-don-gnocchi-firenze/air-lab"
 
+
+# Build-time Node tooling: never copy into the published Jekyll site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .bundle
+  - vendor
+  - node_modules
+  - scripts
+  - package.json
+  - package-lock.json
+  - README.md

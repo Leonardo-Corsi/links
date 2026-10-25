@@ -1,0 +1,11 @@
+{
+  "title": "EEG asymmetry detection in patients with severe acquired brain injuries via machine learning methods",
+  "date": "2022-10-04",
+  "status": "Article",
+  "description": "Automating expert-rated EEG asymmetry turns a qualitative clinical reporting criterion into a reproducible quantitative endpoint for clinical research.",
+  "links": [
+    {
+      "url": "https://doi.org/10.1016/j.bspc.2022.104260"
+    }
+  ]
+}

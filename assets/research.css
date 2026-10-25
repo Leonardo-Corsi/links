@@ -1,0 +1,37 @@
+:root{--bg:#211d19;--surface:#28231f;--surface-alt:#2e2924;--fg:#f2f2ee;--muted:#b4ada5;--dim:#898078;--line:#4c453f;--neon:#39ff14;}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;color:var(--fg);font:14px/1.58 Consolas,"Lucida Console","Courier New",monospace;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:inherit}a:focus-visible{outline:2px solid var(--neon);outline-offset:4px}
+.page-shell{width:min(1120px,calc(100% - 80px));margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+.topbar{padding:32px 0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:14px;font-weight:bold;letter-spacing:.03em}.brand-cursor{height:14px;width:9px;background:var(--neon);box-shadow:0 0 10px #39ff1470}
+.topbar nav{display:flex;align-items:center;flex-wrap:wrap;gap:13px 28px}.topbar nav a{font-size:11px;letter-spacing:.04em;text-decoration:none;color:var(--muted);transition:color .12s}.topbar nav a:hover,.topbar nav a[aria-current]{color:var(--neon)}
+main{flex:1}.hero{padding:85px 0 58px;max-width:760px}.terminal-label{color:var(--muted);font-size:13px;margin:0}.terminal-label span{color:var(--neon);padding-right:9px}
+h1{font-size:clamp(44px,7vw,75px);font-weight:normal;letter-spacing:-.065em;line-height:1.12;margin:16px 0 22px}.neon{color:var(--neon)}.hero>p:last-child{font-size:clamp(15px,1.9vw,18px);max-width:700px;line-height:1.65;color:#c7c0b9;margin:0}
+.section-work{padding-bottom:64px}.section-title{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:26px}.section-title h2{font-size:21px;letter-spacing:-.035em;margin:0;font-weight:normal}.section-title>span{color:var(--dim);font-size:11px;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.work-card{border:1px solid var(--line);background:var(--surface);min-width:0;display:block;transition:border-color .16s,transform .16s}.work-card:hover{border-color:#777064;transform:translateY(-2px)}
+.graphic{aspect-ratio:2 / 1;width:100%;background:#2b2621;border-bottom:1px solid var(--line);overflow:hidden;position:relative;padding:0}
+.graphic img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1}
+.card-body{padding:23px 25px 24px;display:block;}.card-status{font-size:10px;color:#a7f594;letter-spacing:.025em;margin:0 0 10px}.card-body h3{font-size:19px;line-height:1.35;letter-spacing:-.04em;font-weight:normal;margin:0 0 12px}.card-summary{font-size:13px;color:#c8c1ba;margin:0;line-height:1.6}
+.card-links{margin-top:16px;padding-top:0;display:flex;flex-direction:column;gap:7px}.card-links a{font-size:11px;color:#bbd7ad;overflow-wrap:anywhere;text-decoration:none}.card-links a:hover{text-decoration:underline;color:var(--neon)}.card-links a span{color:var(--neon)}
+
+@media(max-width:760px){.page-shell{width:calc(100% - 40px)}.topbar{align-items:flex-start;flex-direction:column;padding:26px 0 18px;gap:18px}.topbar nav{gap:12px 22px}.hero{padding:60px 0 50px}.cards{grid-template-columns:1fr;gap:16px}.section-work{padding-bottom:48px}.graphic{aspect-ratio:2 / 1}.card-body{padding:19px 19px 21px}.section-title h2{font-size:17px}}
+@media(max-width:440px){.brand{font-size:12px}.topbar nav a{font-size:10px}.section-title>span{font-size:9px}.hero{padding:48px 0 42px}}
+@media(prefers-reduced-motion:reduce){.work-card,.topbar nav a{transition:none}.work-card:hover{transform:none}}
+@media print{html,body{background:white;color:black}.page-shell{width:100%}.topbar{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.work-card{break-inside:avoid;background:white;color:black}.card-body h3,.card-summary{color:black}.graphic{background:white}.hero{padding:20px 0}.section-work{padding:15px 0}}
+
+/* Quiet neon section hierarchy shared with the CV. */
+.section-title{border-bottom-color:#39ff14;}
+.section-title h2::before{content:"";display:inline-block;width:9px;height:9px;background:#39ff14;margin-right:12px;vertical-align:1px;}
+
+/* Full-bleed research thumbnails. Author images at 2:1 (e.g. 1400 x 700)
+   without internal white/transparent margins to avoid unintended crop. */
+.publications-cards .graphic{aspect-ratio:2 / 1;background:#26211d}
+.publications-cards .graphic img{width:100%;height:100%;object-fit:cover;object-position:center}
+.publications-cards .card-summary{font-size:13px;line-height:1.55}
+.publications-cards .card-body h3{font-size:18px;line-height:1.4}
+.cards-loading,.cards-error{color:var(--muted);margin:0;padding:20px 0;font-size:13px}
+/* Visible blinking insertion point in RESEARCH_, 1 second cycle. */
+h1 .neon{display:inline-block;animation:terminal-blink 1s steps(1,end) infinite;}
+@keyframes terminal-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media(max-width:760px){.publications-cards .graphic{aspect-ratio:2 / 1}}
+@media(max-width:440px){.publications-cards .graphic{aspect-ratio:2 / 1}}
+@media(prefers-reduced-motion: reduce){h1 .neon{animation:none}}
